@@ -16,12 +16,10 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<liquibase.propertyFile>${project.basedir}/src/main/resources/local.liquibase.properties</liquibase.propertyFile>
-		<!-- <liquibase.liquibaseProLicenseKey></liquibase.liquibaseProLicenseKey> -->
-	  </properties>
+		<liquibase.propertyFile>local.liquibase.properties</liquibase.propertyFile>
+	</properties>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
@@ -40,7 +38,7 @@
 		<dependency>
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-core</artifactId>
-				<version>3.10.2</version>
+				<version>4.1.1</version>
 		</dependency>
 
 		<dependency>
@@ -54,21 +52,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.4.200</version>
 		</dependency>
-		
-<!-- https://mkyong.com/maven/how-to-add-oracle-jdbc-driver-in-your-maven-local-repository/ -->
-<!--		<dependency>
-			<groupId>com.oracle.jdbc</groupId>
-			<artifactId>ojdbc8</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>/Users/support.liquibase.net/Drivers/ojdbc8.jar</systemPath>
-		</dependency> -->
 	</dependencies>
 
 	<build>
@@ -80,25 +69,15 @@
 					<includeSystemScope>true</includeSystemScope>
 				</configuration>
 			</plugin>
+			<!-- Liquibase plugin is used here to run any mvn:liquibase commands within maven -->
 			<plugin>
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-maven-plugin</artifactId>
-				<version>3.10.2-DAT-4050-SNAPSHOT</version>
+				<version>4.1.1</version>
 				<configuration>
 				  <propertyFile>${liquibase.propertyFile}</propertyFile>
-				  <liquibaseProLicenseKey>${liquibase.liquibaseProLicenseKey}</liquibaseProLicenseKey>
 				</configuration>
-				<!--  <executions>
-				<execution>
-				<goals>
-				<goal>diff</goal>
-			  </goals>
-			  <phase>process-classes</phase>
-			</execution>
-		  </executions>-->
-		  <dependencies>
-		  </dependencies>
-		</plugin>
+			</plugin>
 		</plugins>
 	</build>
 </project>
