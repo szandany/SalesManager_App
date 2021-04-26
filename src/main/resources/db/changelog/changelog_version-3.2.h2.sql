@@ -11,3 +11,7 @@ INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Leather sofa By Michellotti'
 --changeset support.liquibase.net:1582471835439-3
 INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Round coffee table By Michellotti', 1, 800.23);
 --rollback DELETE FROM SALES WHERE ITEM='Round coffee table By Michellotti';
+
+--changeset aditi:123-0
+INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Standing Desk', 2, 150.00);
+--rollback DELETE FROM SALES WHERE ITEM='Standing Desk';
