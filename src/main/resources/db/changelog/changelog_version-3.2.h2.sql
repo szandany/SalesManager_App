@@ -9,5 +9,5 @@ INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Leather sofa By Michellotti'
 --rollback DELETE FROM SALES WHERE ITEM='Leather sofa By Michellotti';
 
 --changeset JohnD:3
-INSERT INTO SALES (ITEM, QUANTITY, AMOUNTS) VALUES ('Round coffee table By Michellotti', 1, 800.23);
+INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Round coffee table By Michellotti', 1, 800.23);
 --rollback DELETE FROM SALES WHERE ITEM='Round coffee table By Michellotti';
