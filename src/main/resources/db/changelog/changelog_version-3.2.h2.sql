@@ -5,7 +5,7 @@ CREATE TABLE SALES (ID BIGINT AUTO_INCREMENT, ITEM VARCHAR(255), QUANTITY NUMBER
 --rollback DROP TABLE SALES;
 
 --changeset JohnD:2
-INSERT INTO SALES (ITEMS, QUANTITY, AMOUNT) VALUES ('Leather sofa By Michellotti', 4, 5026.63);
+INSERT INTO SALES (ITEM, QUANTITY, AMOUNT) VALUES ('Leather sofa By Michellotti', 4, 5026.63);
 --rollback DELETE FROM SALES WHERE ITEM='Leather sofa By Michellotti';
 
 --changeset JohnD:3
